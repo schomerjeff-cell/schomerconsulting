@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>J. M. Schomer Consulting — Technology &amp; Operations Advisory</title>
 <meta name="description" content="Independent consulting from Jeffrey M. Schomer: IT operations, technology strategy, financial modeling, and negotiation, drawing on three decades leading transformation at FirstEnergy, Allegheny Energy, and Amicus Therapeutics.">
@@ -530,9 +529,116 @@
     outline: 2px solid var(--signal);
     outline-offset: 3px;
   }
+
+  /* ---------- Password gate ---------- */
+
+  #gate-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+
+  #gate-overlay.gate-hidden { display: none; }
+
+  body.gate-locked { overflow: hidden; }
+  body.gate-locked #site-content { display: none; }
+
+  .gate-box {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+  }
+
+  .gate-mark {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 22px;
+    display: block;
+  }
+
+  .gate-box h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--paper);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .gate-box p {
+    color: #9AA8AB;
+    font-size: 0.95rem;
+    margin-bottom: 26px;
+  }
+
+  .gate-form {
+    display: flex;
+    gap: 10px;
+  }
+
+  .gate-form input[type="password"] {
+    flex: 1;
+    background: #1E2E3B;
+    border: 1px solid #33454F;
+    color: var(--paper);
+    padding: 12px 14px;
+    border-radius: 3px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+  }
+  .gate-form input[type="password"]:focus {
+    outline: none;
+    border-color: var(--signal);
+  }
+  .gate-form input[type="password"]::placeholder { color: #6C7C82; }
+
+  .gate-form button {
+    background: var(--signal);
+    color: var(--paper);
+    border: none;
+    padding: 12px 18px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .gate-form button:hover { opacity: 0.88; }
+
+  .gate-error {
+    color: #E5A9A0;
+    font-size: 13px;
+    margin-top: 14px;
+    min-height: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
 </style>
 </head>
-<body>
+<body class="gate-locked">
+
+<div id="gate-overlay">
+  <div class="gate-box">
+    <svg class="gate-mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="6" cy="24" r="2.4" fill="#1F6F5C"/>
+      <circle cx="15" cy="6" r="2.4" fill="#1F6F5C"/>
+      <circle cx="24" cy="24" r="2.4" fill="#A9803F"/>
+      <path d="M6 24 L15 6 L24 24" stroke="#EEF1EE" stroke-width="1.4"/>
+    </svg>
+    <h1>This site is under construction</h1>
+    <p>Enter the password to preview J. M. Schomer Consulting.</p>
+    <form class="gate-form" id="gate-form">
+      <input type="password" id="gate-input" placeholder="Password" autocomplete="off" autofocus>
+      <button type="submit">Enter</button>
+    </form>
+    <p class="gate-error" id="gate-error"></p>
+  </div>
+</div>
+
+<div id="site-content">
 
 <header class="site-nav">
   <div class="nav-inner">
@@ -769,8 +875,42 @@
   </div>
 </footer>
 
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function () {
+    var SITE_PASSWORD = "lode-FIERCELY-flicks";
+    var SESSION_KEY = "jms_gate_unlocked";
+
+    var overlay = document.getElementById('gate-overlay');
+    var form = document.getElementById('gate-form');
+    var input = document.getElementById('gate-input');
+    var error = document.getElementById('gate-error');
+    var body = document.body;
+
+    function unlock() {
+      body.classList.remove('gate-locked');
+      overlay.classList.add('gate-hidden');
+      sessionStorage.setItem(SESSION_KEY, "1");
+    }
+
+    if (sessionStorage.getItem(SESSION_KEY) === "1") {
+      unlock();
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (input.value === SITE_PASSWORD) {
+        unlock();
+      } else {
+        error.textContent = "That password isn't right — try again.";
+        input.value = "";
+        input.focus();
+      }
+    });
+  })();
 </script>
 
 </body>
