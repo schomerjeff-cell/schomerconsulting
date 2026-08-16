@@ -456,6 +456,21 @@
 
   .tl-item p.desc { color: var(--slate); font-size: 0.96rem; max-width: 62ch; }
 
+  .tl-merger-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: -18px 0 22px -28px;
+    padding-left: 0;
+  }
+  .tl-merger-note svg { width: 60px; height: 20px; flex-shrink: 0; }
+  .tl-merger-note span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+    letter-spacing: 0.03em;
+  }
+
   .education-note {
     margin-top: 36px;
     padding-top: 24px;
@@ -624,10 +639,8 @@
 <div id="gate-overlay">
   <div class="gate-box">
     <svg class="gate-mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="6" cy="24" r="2.4" fill="#1F6F5C"/>
-      <circle cx="15" cy="6" r="2.4" fill="#1F6F5C"/>
-      <circle cx="24" cy="24" r="2.4" fill="#A9803F"/>
-      <path d="M6 24 L15 6 L24 24" stroke="#EEF1EE" stroke-width="1.4"/>
+      <path d="M4 22 L11 14 L17 18 L23 8" stroke="#EEF1EE" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M18 6 L24 6 L24 12" stroke="#A9803F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <h1>This site is under construction</h1>
     <p>Enter the password to preview J. M. Schomer Consulting.</p>
@@ -645,10 +658,8 @@
   <div class="nav-inner">
     <div class="brand">
       <svg class="mark" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="6" cy="24" r="2.4" fill="#1F6F5C"/>
-        <circle cx="15" cy="6" r="2.4" fill="#1F6F5C"/>
-        <circle cx="24" cy="24" r="2.4" fill="#A9803F"/>
-        <path d="M6 24 L15 6 L24 24" stroke="#14202B" stroke-width="1.4"/>
+        <path d="M4 22 L11 14 L17 18 L23 8" stroke="#1F6F5C" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18 6 L24 6 L24 12" stroke="#A9803F" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       J.&nbsp;M.&nbsp;SCHOMER&nbsp;CONSULTING
     </div>
@@ -831,19 +842,29 @@
         <p class="tl-dates">2011 — 2021</p>
         <h3>FirstEnergy</h3>
         <p class="tl-role">Director, End User Systems &amp; IT Planning · Director, End User Computing &amp; Regional Operations · Manager, Regional Communications</p>
-        <p class="desc">Led End User Computing, Analytics &amp; Integration, and IT Planning, including a 90-project PMO and IT financials. Earlier, managed regional two-way radio communications and field area networks across ten operating companies.</p>
+        <p class="desc">When FirstEnergy acquired Allegheny Energy in 2011, I was back in a leadership role within a year of the merger — then advanced over the next decade to lead End User Computing, Analytics &amp; Integration, and IT Planning, including a 90-project PMO and IT financials.</p>
       </div>
+
+      <div class="tl-merger-note">
+        <svg viewBox="0 0 60 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="10" cy="10" r="3" fill="#A9803F"/>
+          <circle cx="50" cy="10" r="3" fill="#1F6F5C"/>
+          <path d="M13 10 H47" stroke="#C9D0C9" stroke-width="1"/>
+        </svg>
+        <span>FirstEnergy acquired Allegheny Energy in 2011</span>
+      </div>
+
       <div class="tl-item">
         <p class="tl-dates">1992 — 2011</p>
         <h3>Allegheny Energy, Inc.</h3>
         <p class="tl-role">General Manager — Telecommunications, IT, Finance &amp; Corporate Systems, Financial &amp; Risk Analysis</p>
-        <p class="desc">Ran the wholesale fiber business Allegheny Communications Connect to profitability and its eventual sale; held general manager roles spanning IT, corporate systems, and financial &amp; risk analysis in support of the Transmission &amp; Distribution business.</p>
+        <p class="desc">Progressed through a series of General Manager leadership roles with steadily increasing responsibility — ran the wholesale fiber business Allegheny Communications Connect to profitability and its eventual sale, and led teams spanning IT, corporate systems, and financial &amp; risk analysis in support of the Transmission &amp; Distribution business.</p>
       </div>
       <div class="tl-item">
         <p class="tl-dates">1987 — 1992</p>
         <h3>Mellon Bank</h3>
-        <p class="tl-role">Programmer Analyst</p>
-        <p class="desc">Implemented and maintained accounting systems, building the technical foundation for a career spanning technology and finance.</p>
+        <p class="tl-role">Programmer Analyst → Financial Systems Team Lead</p>
+        <p class="desc">Started as an individual contributor building and maintaining accounting systems, then grew into a leadership role on the team — leading the effort to develop a new financial reporting system. The first step in a career spent turning individual technical skill into the ability to lead people and projects.</p>
       </div>
     </div>
     <p class="education-note"><strong>Education</strong> — B.S. in Computer Systems and Mathematics, Grove City College</p>
