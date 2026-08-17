@@ -360,6 +360,9 @@
   @media (max-width: 760px) { .expertise-item--wide { grid-column: span 2; } }
   @media (max-width: 480px) { .expertise-item--wide { grid-column: span 1; } }
 
+  .expertise-item--wide2 { grid-column: span 2; }
+  @media (max-width: 480px) { .expertise-item--wide2 { grid-column: span 1; } }
+
   /* ---------- Track record ---------- */
 
   .record-list {
@@ -680,8 +683,8 @@
       <h1>Three decades leading people through complexity.</h1>
       <p class="lede">
         Independent consulting from <strong>Jeffrey&nbsp;M.&nbsp;Schomer</strong> — a leadership career that started
-        as an individual contributor and grew into direct responsibility for global IT organizations of 160+ people,
-        across FirstEnergy, Allegheny Energy, and Amicus Therapeutics.
+        as an individual contributor, grew into leading teams of up to 160+ people, and expanded into global IT
+        leadership spanning four continents — across FirstEnergy, Allegheny Energy, and Amicus Therapeutics.
       </p>
       <div class="hero-ctas">
         <a class="btn-primary focus-visible-outline" href="mailto:schomer.jeff@gmail.com">Start a conversation →</a>
@@ -721,14 +724,20 @@
         I started as a programmer analyst at Mellon Bank, an individual contributor writing code. Within a few
         years I was leading the effort to build a new financial reporting system — the first time I led people,
         not just projects. That step repeated itself again and again over the next three decades: a team of 5,
-        then 40, then 65, then 160, then a global organization of 20 spanning four continents — at Allegheny
-        Energy, through its acquisition by FirstEnergy, and now at Amicus Therapeutics.
+        then 40, then 65, then 160 at Allegheny Energy and, after its acquisition, FirstEnergy — then a smaller
+        but global organization spanning four continents at Amicus Therapeutics, where I picked up the
+        international management experience the earlier roles hadn't required. Most recently, that's meant
+        leading the organization's move into AI — championing Microsoft Copilot adoption and directing the build
+        of an AI-driven service desk chatbot.
       </p>
       <p class="muted">
         Each step meant taking on more complexity and more responsibility for people, not just for technology —
         negotiating contracts, resolving disputes, leading a business through a corporate acquisition, and turning
-        failing operations around. I'm now offering that same leadership, built through three decades of doing it,
-        as an independent advisor to organizations navigating similar decisions.
+        failing operations around. At both FirstEnergy and Amicus, that responsibility extended well beyond direct
+        headcount — leading much larger teams through outsourcing partnerships, which worked best when I treated
+        the partner as a strategic collaborator rather than a vendor to manage. Some of the strongest working
+        relationships of my career came out of that approach. I'm now offering that same leadership, built through
+        three decades of doing it, as an independent advisor to organizations navigating similar decisions.
       </p>
     </div>
   </div>
@@ -745,7 +754,7 @@
     <div class="expertise-grid">
       <div class="expertise-item">
         <span class="tag">01</span>
-        <h3>Team &amp; Organizational Leadership</h3>
+        <h3>Team Leadership &amp; Strategic Partner Management</h3>
       </div>
       <div class="expertise-item">
         <span class="tag">02</span>
@@ -767,9 +776,13 @@
         <span class="tag">06</span>
         <h3>Financial Modeling &amp; Analysis</h3>
       </div>
-      <div class="expertise-item expertise-item--wide">
+      <div class="expertise-item">
         <span class="tag">07</span>
         <h3>Mergers &amp; Acquisitions Analysis</h3>
+      </div>
+      <div class="expertise-item expertise-item--wide2">
+        <span class="tag">08</span>
+        <h3>AI Adoption &amp; Automation</h3>
       </div>
     </div>
   </div>
@@ -789,14 +802,21 @@
         <div class="record-figure">5 → 160+<span>TEAM SIZE LED OVER 3 DECADES</span></div>
         <div class="record-desc">
           <h3>Grew from individual contributor to global director</h3>
-          <p>Advanced from a first leadership role — leading a financial reporting system build at Mellon Bank — through General Manager and Director roles of steadily increasing scope, to global responsibility for IT organizations of 160+ people across four continents.</p>
+          <p>Advanced from a first leadership role — leading a financial reporting system build at Mellon Bank — through General Manager and Director roles of steadily increasing scope, peaking at 160+ people led at FirstEnergy, then taking on global IT leadership spanning four continents at Amicus Therapeutics.</p>
+        </div>
+      </div>
+      <div class="record-row">
+        <div class="record-figure">End-to-End<span>AI-POWERED SERVICE DESK</span></div>
+        <div class="record-desc">
+          <h3>Led Amicus's move into AI-powered support</h3>
+          <p>Championed Microsoft Copilot adoption and directed the build of a ServiceNow-integrated Teams chatbot — resolving common questions from a Level 0 knowledge base, handing off to a live service desk agent when needed, and automating software installation requests without manual IT intervention.</p>
         </div>
       </div>
       <div class="record-row">
         <div class="record-figure">$4M<span>PER YEAR, ONGOING</span></div>
         <div class="record-desc">
           <h3>Redesigned end-user services delivery</h3>
-          <p>Implemented a new co-sourcing delivery model for FirstEnergy's end-user services, generating recurring annual O&amp;M savings.</p>
+          <p>Implemented a new co-sourcing delivery model for FirstEnergy's end-user services, generating recurring annual O&amp;M savings — treating the outsourcing partner as a strategic collaborator rather than a vendor, a relationship model I later repeated at Amicus.</p>
         </div>
       </div>
       <div class="record-row">
@@ -844,7 +864,7 @@
         <p class="tl-dates">2022 — Present</p>
         <h3>Amicus Therapeutics</h3>
         <p class="tl-role">Director, End User Computing &amp; Infrastructure</p>
-        <p class="desc">Global responsibility for IT Operations across Princeton, Philadelphia, London, and Tokyo, plus affiliates in nine additional countries — service desk, deskside support, endpoint management, network engineering, server infrastructure, and monitoring.</p>
+        <p class="desc">Global responsibility for IT Operations across Princeton, Philadelphia, London, and Tokyo, plus affiliates in nine additional countries — service desk, deskside support, endpoint management, network engineering, server infrastructure, and monitoring. Led the organization's AI adoption, championing the rollout of Microsoft Copilot and directing the build of a ServiceNow-integrated Teams chatbot — answering user questions from a Level 0 knowledge base, handing off to a live service desk agent when needed, and automating software installation requests end to end.</p>
       </div>
       <div class="tl-item">
         <p class="tl-dates">2011 — 2021</p>
@@ -911,7 +931,7 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 
   (function () {
-    var SITE_PASSWORD = "lode-FIERCELY-flicks";
+    var SITE_PASSWORD = "Jeff is retiring";
     var SESSION_KEY = "jms_gate_unlocked";
 
     var overlay = document.getElementById('gate-overlay');
