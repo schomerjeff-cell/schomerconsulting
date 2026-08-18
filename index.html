@@ -326,31 +326,36 @@
 
   /* ---------- Expertise ---------- */
 
-  .expertise-flow {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    row-gap: 14px;
-    column-gap: 16px;
+  .expertise-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 22px;
+    column-gap: 48px;
   }
 
-  .expertise-flow span {
+  .expertise-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.08rem;
     font-weight: 600;
     color: var(--ink);
     line-height: 1.4;
   }
 
-  .expertise-flow span:not(:first-child)::before {
-    content: "·";
-    color: var(--signal);
-    font-weight: 400;
-    margin-right: 16px;
+  .expertise-list li::before {
+    content: "";
+    flex: none;
+    width: 18px;
+    height: 2px;
+    background: var(--signal);
+    transform: translateY(-4px);
   }
 
   @media (max-width: 640px) {
-    .expertise-flow span { font-size: 1.1rem; }
+    .expertise-list { grid-template-columns: 1fr; row-gap: 18px; }
   }
 
   /* ---------- Track record ---------- */
@@ -741,15 +746,12 @@
       <p class="section-eyebrow">Areas of Expertise</p>
       <h2>Where I add the most value.</h2>
     </div>
-    <div class="expertise-flow">
-      <span>Team Leadership &amp; Strategic Partner Management</span>
-      <span>End User Services &amp; IT Operations</span>
-      <span>Technology Strategy &amp; Service Delivery</span>
-      <span>Strategic Planning &amp; Project Management</span>
-      <span>Deal &amp; Contract Negotiation</span>
-      <span>AI Adoption &amp; Automation</span>
-    </div>
-    </div>
+    <ul class="expertise-list">
+      <li>Team Leadership &amp; Strategic Partner Management</li>
+      <li>End User Services &amp; IT Operations</li>
+      <li>AI Adoption &amp; Automation</li>
+      <li>Technology Strategy &amp; Service Delivery</li>
+    </ul>
   </div>
 </section>
 
