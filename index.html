@@ -326,42 +326,32 @@
 
   /* ---------- Expertise ---------- */
 
-  .expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-  }
-  @media (max-width: 760px) { .expertise-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px) { .expertise-grid { grid-template-columns: 1fr; } }
-
-  .expertise-item {
-    background: var(--paper-raised);
-    padding: 26px 22px;
+  .expertise-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    row-gap: 14px;
+    column-gap: 16px;
   }
 
-  .expertise-item .tag {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--signal);
-    letter-spacing: 0.06em;
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .expertise-item h3 {
-    font-size: 1.02rem;
+  .expertise-flow span {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.3rem;
     font-weight: 600;
-    font-family: 'Source Sans 3', sans-serif;
+    color: var(--ink);
+    line-height: 1.4;
   }
 
-  .expertise-item--wide { grid-column: span 3; }
-  @media (max-width: 760px) { .expertise-item--wide { grid-column: span 2; } }
-  @media (max-width: 480px) { .expertise-item--wide { grid-column: span 1; } }
+  .expertise-flow span:not(:first-child)::before {
+    content: "·";
+    color: var(--signal);
+    font-weight: 400;
+    margin-right: 16px;
+  }
 
-  .expertise-item--wide2 { grid-column: span 2; }
-  @media (max-width: 480px) { .expertise-item--wide2 { grid-column: span 1; } }
+  @media (max-width: 640px) {
+    .expertise-flow span { font-size: 1.1rem; }
+  }
 
   /* ---------- Track record ---------- */
 
@@ -751,39 +741,14 @@
       <p class="section-eyebrow">Areas of Expertise</p>
       <h2>Where I add the most value.</h2>
     </div>
-    <div class="expertise-grid">
-      <div class="expertise-item">
-        <span class="tag">01</span>
-        <h3>Team Leadership &amp; Strategic Partner Management</h3>
-      </div>
-      <div class="expertise-item">
-        <span class="tag">02</span>
-        <h3>End User Services &amp; IT Operations</h3>
-      </div>
-      <div class="expertise-item">
-        <span class="tag">03</span>
-        <h3>Technology Strategy &amp; Service Delivery</h3>
-      </div>
-      <div class="expertise-item">
-        <span class="tag">04</span>
-        <h3>Strategic Planning &amp; Project Management</h3>
-      </div>
-      <div class="expertise-item">
-        <span class="tag">05</span>
-        <h3>Deal &amp; Contract Negotiation</h3>
-      </div>
-      <div class="expertise-item">
-        <span class="tag">06</span>
-        <h3>Financial Modeling &amp; Analysis</h3>
-      </div>
-      <div class="expertise-item">
-        <span class="tag">07</span>
-        <h3>Mergers &amp; Acquisitions Analysis</h3>
-      </div>
-      <div class="expertise-item expertise-item--wide2">
-        <span class="tag">08</span>
-        <h3>AI Adoption &amp; Automation</h3>
-      </div>
+    <div class="expertise-flow">
+      <span>Team Leadership &amp; Strategic Partner Management</span>
+      <span>End User Services &amp; IT Operations</span>
+      <span>Technology Strategy &amp; Service Delivery</span>
+      <span>Strategic Planning &amp; Project Management</span>
+      <span>Deal &amp; Contract Negotiation</span>
+      <span>AI Adoption &amp; Automation</span>
+    </div>
     </div>
   </div>
 </section>
@@ -864,7 +829,7 @@
         <p class="tl-dates">2022 to Present</p>
         <h3>Amicus Therapeutics</h3>
         <p class="tl-role">Director, End User Computing &amp; Infrastructure</p>
-        <p class="desc">Global responsibility for IT Operations across Princeton, Philadelphia, London, and Tokyo, plus affiliates in nine additional countries, spanning service desk, deskside support, endpoint management, network engineering, server infrastructure, and monitoring. Helped lead the organization's AI adoption, championing the rollout of Microsoft Copilot and directing the build of a ServiceNow-integrated Teams chatbot that answered user questions from a Level 0 knowledge base, handed off to a live service desk agent when needed, and automated software installation requests end to end.</p>
+        <p class="desc">Global responsibility for IT Operations across Princeton, Philadelphia, London, and Tokyo, plus affiliates in many additional countries, spanning service desk, deskside support, endpoint management, network engineering, server infrastructure, and monitoring. Helped lead the organization's AI adoption, championing the rollout of Microsoft Copilot and directing the build of a ServiceNow-integrated Teams chatbot that answered user questions from a Level 0 knowledge base, handed off to a live service desk agent when needed, and automated software installation requests end to end.</p>
       </div>
       <div class="tl-item">
         <p class="tl-dates">2011 to 2021</p>
